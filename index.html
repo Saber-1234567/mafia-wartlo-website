@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b12">
+<meta name="description" content="رسانه خبری رسمی بازی مافیا وارتلو؛ اخبار، اطلاعیه‌ها و آخرین تغییرات بازی.">
+<title>مافیا وارتلو | رسانه رسمی</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg: #080b12;
+  --panel: #101722;
+  --panel2: #151f2d;
+  --gold: #e7bd62;
+  --text: #f4f5f7;
+  --muted: #a2adbd;
+  --line: #263143;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.9;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: auto;
+}
+
+header {
+  background: rgba(8,11,18,.96);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(15px);
+}
+
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.logo-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg,#f1d18a,#a77524);
+  color: #10131a;
+  font-size: 22px;
+  overflow: hidden;
+}
+
+.logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.logo small {
+  display: block;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 2px;
+  direction: ltr;
+}
+
+nav {
+  display: flex;
+  gap: 23px;
+  color: #c4cbd5;
+  font-size: 13px;
+}
+
+nav a:hover { color: var(--gold); }
+
+.hero {
+  padding: 85px 0 75px;
+  background:
+    radial-gradient(ellipse at 80% 10%,#24344a 0%,transparent 48%),
+    radial-gradient(ellipse at 10% 90%,#332416 0%,transparent 45%),
+    #080b12;
+  border-bottom: 1px solid var(--line);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 13px;
+  border: 1px solid #4b412d;
+  border-radius: 30px;
+  color: var(--gold);
+  font-size: 12px;
+  background: #17150f;
+}
+
+.hero h1 {
+  margin-top: 24px;
+  font-size: clamp(32px,6vw,57px);
+  line-height: 1.45;
+  font-weight: 900;
+  max-width: 750px;
+}
+
+.hero h1 span { color: var(--gold); }
+
+.hero p {
+  color: #b5bfcc;
+  margin-top: 17px;
+  max-width: 650px;
+  font-size: 15px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn {
+  padding: 11px 22px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 800;
+  display: inline-block;
+  transition: .2s;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #17130b;
+}
+
+.btn-outline {
+  border: 1px solid #414c5c;
+  color: #f3f4f6;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.section {
+  padding: 55px 0;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 23px;
+}
+
+.section-head h2 {
+  font-size: 23px;
+  font-weight: 900;
+}
+
+.section-head h2 span { color: var(--gold); }
+
+.section-head p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: .2s;
+}
+
+.card:hover {
+  border-color: #8e713a;
+  transform: translateY(-3px);
+}
+
+.card-top {
+  height: 130px;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 50%,#334256,#151e2b 65%,#101722);
+  border-bottom: 1px solid var(--line);
+  font-size: 40px;
+}
+
+.card-body { padding: 18px; }
+
+.tag {
+  color: var(--gold);
+  font-size: 11px;
+  background: #292316;
+  padding: 4px 9px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-top: 12px;
+  line-height: 1.8;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.date {
+  display: block;
+  color: #7f8b9b;
+  font-size: 10px;
+  margin-top: 14px;
+}
+
+.notice-box {
+  border: 1px solid #4d4129;
+  background: linear-gradient(120deg,#1c1b17,#111722);
+  border-radius: 15px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.notice-icon {
+  min-width: 53px;
+  height: 53px;
+  display: grid;
+  place-items: center;
+  background: #302719;
+  border-radius: 12px;
+  font-size: 25px;
+}
+
+.notice-box h3 { font-size: 17px; }
+
+.notice-box p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.info-card {
+  padding: 23px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 13px;
+}
+
+.info-card h3 { font-size: 16px; }
+
+.info-card p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 9px;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+footer strong { color: var(--gold); }
+
+@media (max-width:700px) {
+  .nav {
+    padding: 13px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav {
+    width: 100%;
+    gap: 18px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 3px;
+  }
+
+  .hero { padding: 60px 0 50px; }
+
+  .news-grid { grid-template-columns: 1fr; }
+
+  .card {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+  }
+
+  .card-top {
+    height: 100%;
+    min-height: 165px;
+    font-size: 32px;
+    border-bottom: none;
+    border-left: 1px solid var(--line);
+  }
+
+  .card-body { padding: 13px; }
+
+  .card h3 { font-size: 14px; }
+
+  .section { padding: 38px 0; }
+
+  .section-head h2 { font-size: 19px; }
+
+  .about-grid { grid-template-columns: 1fr; }
+
+  .notice-box { padding: 17px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">
+      <span class="logo-icon"><img src="logo.png" alt="لوگوی مافیا وارتلو"></span>
+      <span class="header-brand-name">
+        <span class="header-brand-title">
+          <span class="header-mafia">مافیا</span>
+          <span class="header-wartlo">وارتلو</span>
+        </span>
+        <small>MAFIA WARTLO</small>
+      </span>
+    </a>
+
+    <nav>
+      <a href="#home">صفحه اصلی</a>
+      <a href="#news">اخبار بازی</a>
+      <a href="#notices">اطلاعیه‌ها</a>
+      <a href="#about">درباره بازی</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <span class="badge">♠ رسانه خبری مافیا وارتلو</span>
+
+      <h1>
+        به دنیای
+        <span class="brand-name">
+          <span class="brand-mafia" style="color:#ff294d !important;-webkit-text-fill-color:#ff294d !important;background:none !important;">مافیا</span>
+          <span class="brand-wartlo" style="color:#64ddff !important;-webkit-text-fill-color:#64ddff !important;background:none !important;">وارتلو</span>
+        </span><br>
+        جایی که اعتماد، قدرت است
+      </h1>
+
+      <p>
+        رسانه رسمی مافیا وارتلو؛ مرجع انتشار آخرین اخبار، اطلاعیه‌ها و رویدادهای بازی.
+        همراه ما باشید و قدم‌به‌قدم، مسیر شکل‌گیری دنیای وارتلو را دنبال کنید.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-gold" href="#news">مشاهده آخرین اخبار ←</a>
+        <a class="btn btn-outline" href="#about">درباره بازی</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="news">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>آخرین <span>اخبار</span></h2>
+          <p>از تازه‌ترین خبرهای ساخت بازی تا اطلاعیه‌های رسمی؛ همه‌چیز را از مرجع خبری وارتلو دنبال کنید.</p>
+        </div>
+      </div>
+
+      <div class="news-grid">
+        <article class="card">
+          <div class="card-top">🎮</div>
+          <div class="card-body">
+            <span class="tag">اخبار بازی</span>
+            <h3>مافیا وارتلو؛ ماجراجویی تازه‌ای در راه است</h3>
+            <p>
+              مافیا وارتلو در مرحله توسعه قرار دارد. جزئیات قابلیت‌ها، پیشرفت پروژه و خبرهای تازه را از طریق همین رسانه دنبال کنید.
+            </p>
+            <span class="date">رسانه مافیا وارتلو</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">📢</div>
+          <div class="card-body">
+            <span class="tag">اطلاعیه</span>
+            <h3>مرجع رسمی خبرها و اطلاعیه‌های وارتلو</h3>
+            <p>
+              هر خبر مهم، تغییر یا اطلاعیه رسمی درباره بازی از طریق این وب‌سایت منتشر خواهد شد. برای اطلاع از تازه‌ترین رویدادها همراه ما باشید.
+            </p>
+            <span class="date">رسانه مافیا وارتلو</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">⚔️</div>
+          <div class="card-body">
+            <span class="tag">دنیای وارتلو</span>
+            <h3>اتحاد، رقابت و تصمیم‌های سرنوشت‌ساز</h3>
+            <p>
+              با اخبار قابلیت‌های بازی و بخش‌های مختلف دنیای وارتلو آشنا شوید. اطلاعات تکمیلی پس از تأیید و آماده‌شدن منتشر خواهد شد.
+            </p>
+            <span class="date">رسانه مافیا وارتلو</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="notices">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>اطلاعیه‌های <span>رسمی</span></h2>
+          <p>آخرین پیام‌ها، تصمیم‌ها و اطلاعیه‌های تأییدشده تیم سازنده را در این بخش بخوانید.</p>
+        </div>
+      </div>
+
+      <div class="notice-box">
+        <div class="notice-icon">📜</div>
+        <div>
+          <h3>اطلاعیه وضعیت پروژه مافیا وارتلو</h3>
+          <p>
+            مافیا وارتلو همچنان در حال توسعه است و هنوز خبر رسمی‌ای درباره زمان انتشار اعلام نشده است. اطلاعیه‌های تازه فقط از طریق رسانه‌های رسمی پروژه منتشر خواهند شد.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>درباره <span>بازی</span></h2>
+          <p>بیشتر با هدف و مسیر شکل‌گیری مافیا وارتلو آشنا شوید.</p>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="info-card">
+          <h3>🎮 مافیا وارتلو چیست؟</h3>
+          <p>
+            مافیا وارتلو یک بازی مافیایی آنلاین در حال توسعه است که بر پایه نقش‌آفرینی، رقابت، تصمیم‌گیری و همکاری میان بازیکنان شکل می‌گیرد. هدف پروژه، ساخت تجربه‌ای سرگرم‌کننده در دنیایی پر از راز و استراتژی است.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>📰 رسانه رسمی مافیا وارتلو</h3>
+          <p>
+            این وب‌سایت با هدف انتشار اخبار، اطلاعیه‌ها و اطلاعات تأییدشده درباره روند توسعه بازی ایجاد شده است. خبرهای منتشرشده در این رسانه، مرجع اطلاع‌رسانی رسمی پروژه خواهند بود.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <strong>MAFIA WARTLO</strong>
+    <p>رسانه رسمی اخبار و اطلاعیه‌های مافیا وارتلو</p>
+    <p>© تمامی حقوق این وب‌سایت متعلق به سازندگان آن است.</p>
+  </div>
+</footer>
+
+</body>
+</html>
+
+<style>
+/* ===== MAFIA WARTLO CINEMATIC UPGRADE ===== */
+
+:root {
+  --mw-blue: #168bff;
+  --mw-red: #ff2448;
+  --mw-dark: #060914;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 5% 15%, rgba(0,115,255,.17), transparent 35%),
+    radial-gradient(ellipse at 95% 35%, rgba(255,20,55,.15), transparent 38%),
+    linear-gradient(135deg,#050710,#0b1020 55%,#080811) !important;
+  color: #f3f6ff;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(0,120,255,.025) 35%,
+    rgba(255,25,55,.035) 70%,
+    transparent 100%
+  );
+}
+
+a, button {
+  transition: .3s ease !important;
+}
+
+a:hover, button:hover {
+  filter: brightness(1.2);
+}
+
+.logo-icon {
+  border: 1px solid rgba(255,255,255,.2);
+  box-shadow: 0 0 18px rgba(0,130,255,.35),
+              0 0 28px rgba(255,25,55,.2);
+}
+
+.logo-icon img {
+  filter: contrast(1.08) saturate(1.15);
+}
+
+header, nav {
+  backdrop-filter: blur(16px);
+}
+
+section {
+  position: relative;
+}
+
+h1, h2, h3 {
+  text-shadow: 0 0 20px rgba(0,130,255,.12);
+}
+
+h1 {
+  background: linear-gradient(100deg,#ffffff 15%,#70b8ff 48%,#ff536b 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo, .logo small {
+  text-shadow: 0 0 12px rgba(0,130,255,.15);
+}
+
+.card, article, .news-card, .feature-card {
+  border: 1px solid rgba(100,155,255,.18);
+  background: linear-gradient(
+    145deg,
+    rgba(18,30,55,.9),
+    rgba(15,13,27,.94)
+  );
+  box-shadow: 0 8px 30px rgba(0,0,0,.2);
+  transition: transform .25s ease, border-color .25s ease,
+              box-shadow .25s ease;
+}
+
+.card:hover, article:hover, .news-card:hover, .feature-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255,50,80,.6);
+  box-shadow: 0 10px 35px rgba(0,100,255,.12),
+              0 8px 35px rgba(255,25,55,.1);
+}
+
+button, .btn, a.button {
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 0 15px rgba(0,115,255,.15);
+}
+
+button:hover, .btn:hover, a.button:hover {
+  box-shadow: 0 0 20px rgba(0,130,255,.25),
+              0 0 24px rgba(255,30,60,.18);
+}
+
+hr {
+  border-color: rgba(90,150,255,.2);
+}
+
+::selection {
+  background: #147eff;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  body {
+    background:
+      radial-gradient(ellipse at top left,rgba(0,115,255,.13),transparent 45%),
+      radial-gradient(ellipse at bottom right,rgba(255,20,55,.12),transparent 45%),
+      #070a14 !important;
+  }
+
+  .card, article, .news-card, .feature-card {
+    border-radius: 16px;
+  }
+}
+</style>
+
+<style id="wartlo-premium-design">
+:root {
+  --mafia-red: #ff2348;
+  --wartlo-blue: #24c8ff;
+}
+
+.brand-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 1000;
+  letter-spacing: -.8px;
+  white-space: nowrap;
+}
+
+.brand-mafia {
+  color: #ff294d;
+  text-shadow: 0 0 8px #ff234866, 0 0 24px #ff123855;
+}
+
+.brand-wartlo {
+  background: linear-gradient(120deg,#e4fbff,#55dcff,#168cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 9px #24c8ff66);
+}
+
+.logo {
+  gap: 12px;
+}
+
+.logo-icon {
+  box-shadow: 0 0 18px #168bff55, 0 0 24px #ff244833;
+  border: 1px solid #ffffff38;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.logo:hover .logo-icon {
+  transform: rotate(-5deg) scale(1.06);
+  box-shadow: 0 0 25px #168bff88, 0 0 32px #ff244855;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse at 0% 8%, #087cff22, transparent 38%),
+    radial-gradient(ellipse at 100% 28%, #ff174422, transparent 38%),
+    linear-gradient(145deg,#050711,#0a1020 52%,#070810) !important;
+}
+
+.card, article, .news-card, .feature-card {
+  backdrop-filter: blur(14px);
+  border: 1px solid #8abfff24;
+  box-shadow: 0 12px 35px #00000035;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before, article::before,
+.news-card::before, .feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,#168bff,#24c8ff,#ff2448);
+  opacity: .8;
+}
+
+.card:hover, article:hover,
+.news-card:hover, .feature-card:hover {
+  border-color: #24c8ff77;
+  box-shadow: 0 15px 38px #087cff20, 0 0 20px #ff244410;
+  transform: translateY(-5px);
+}
+
+button, .btn, a.button {
+  border-radius: 12px;
+  background-image: linear-gradient(110deg,#126dce,#168bff 52%,#e52b4b);
+  color: #fff;
+  border: 1px solid #ffffff25;
+  box-shadow: 0 5px 22px #087cff30;
+}
+
+button:hover, .btn:hover, a.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px #087cff45, 0 0 20px #ff244422;
+}
+
+h2 span {
+  background: linear-gradient(100deg,#ff3656,#24c8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+::selection {
+  background: #168bff;
+  color: white;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .brand-mafia, .brand-wartlo {
+    animation: wartlo-glow 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes wartlo-glow {
+    from { opacity: .88; }
+    to { opacity: 1; }
+  }
+}
+
+@media(max-width:480px) {
+  .brand-name { gap: 5px; }
+  .logo { gap: 8px; }
+  .logo-icon { width: 39px; height: 39px; }
+}
+</style>
+
+<style id="wartlo-color-fix">
+/* اصلاح رنگ متن‌ها بدون تغییر رنگ اصلی دکمه‌ها */
+
+body {
+  color: #e7edf8;
+}
+
+p, li, label {
+  color: #c6d1e3;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #f4f7ff;
+  -webkit-text-fill-color: initial;
+}
+
+h2 span {
+  color: inherit;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+/* رنگ اختصاصی نام بازی حفظ شود */
+.brand-mafia {
+  color: #ff294d;
+  -webkit-text-fill-color: #ff294d;
+}
+
+.brand-wartlo {
+  background: linear-gradient(120deg,#e4fbff,#55dcff,#168cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* دکمه‌ها: رنگ قبلی خودشان را حفظ کنند */
+button, .btn, a.button {
+  background-image: none;
+  box-shadow: none;
+  transform: none;
+}
+
+/* متن داخل دکمه‌ها خوانا بماند */
+button, .btn, a.button {
+  color: inherit;
+}
+
+/* افکت گرافیکی کارت‌ها حفظ شود */
+.card, article, .news-card, .feature-card {
+  color: #e7edf8;
+}
+
+.card p, article p, .news-card p, .feature-card p {
+  color: #c6d1e3;
+}
+</style>
+
+<style id="wartlo-hero-buttons-fix">
+/* بازگرداندن رنگ اصلی دکمه‌های صفحه اول */
+.hero-buttons .btn {
+  transform: none;
+  box-shadow: none;
+  background-image: none;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.hero-buttons .btn-gold {
+  background: var(--gold);
+  color: #10131a;
+  border: 1px solid var(--gold);
+}
+
+.hero-buttons .btn-outline {
+  background: transparent;
+  color: #f3f6ff;
+  border: 1px solid var(--gold);
+}
+
+.hero-buttons .btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 18px rgba(212,175,90,.25);
+}
+
+.hero-buttons .btn-outline:hover {
+  transform: translateY(-2px);
+  background: rgba(212,175,90,.08);
+}
+</style>
+
+<style id="wartlo-final-visual-upgrade">
+/* پس‌زمینه سینمایی آبی و قرمز */
+body {
+  background:
+    radial-gradient(ellipse at 5% 12%, rgba(20,145,255,.13), transparent 36%),
+    radial-gradient(ellipse at 95% 32%, rgba(255,30,65,.12), transparent 36%),
+    linear-gradient(145deg,#050711,#0a1020 55%,#070811) !important;
+  color: #e8eef9;
+}
+
+/* عنوان اختصاصی بازی */
+.brand-name {
+  display: inline-flex;
+  gap: 7px;
+  white-space: nowrap;
+  font-weight: 1000;
+}
+
+.brand-mafia {
+  color: #ff294d !important;
+  -webkit-text-fill-color: #ff294d !important;
+  text-shadow: 0 0 12px #ff244855;
+}
+
+.brand-wartlo {
+  background: linear-gradient(120deg,#e8fcff,#64ddff,#168bff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 7px #24c8ff35);
+}
+
+/* کارت‌های خبری با ظاهر شیشه‌ای */
+.card, article, .news-card, .feature-card {
+  background: linear-gradient(
+    145deg,
+    rgba(18,30,52,.82),
+    rgba(9,13,27,.94)
+  );
+  border: 1px solid rgba(100,175,255,.19);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.22);
+  transition: border-color .25s ease, transform .25s ease,
+              box-shadow .25s ease;
+}
+
+.card:hover, article:hover,
+.news-card:hover, .feature-card:hover {
+  border-color: rgba(36,200,255,.48);
+  box-shadow: 0 12px 32px rgba(0,110,255,.12);
+  transform: translateY(-3px);
+}
+
+/* رنگ متن‌ها یکدست و خوانا */
+body p, body li {
+  color: #c6d2e5;
+  line-height: 1.95;
+}
+
+body h2, body h3 {
+  color: #f3f7ff;
+}
+
+body h2 span {
+  color: #5fd8ff;
+  -webkit-text-fill-color: #5fd8ff;
+  background: none;
+}
+
+/* خط تزئینی ظریف روی کارت‌ها */
+.news-card, .feature-card, article, .card {
+  position: relative;
+}
+
+/* عکس لوگو */
+.logo-icon {
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.22);
+  box-shadow: 0 0 18px rgba(22,139,255,.24);
+}
+
+.logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* مهم: دو دکمه اصلی دقیقاً رنگ‌های قبلی خودشان را حفظ کنند */
+.hero-buttons .btn-gold {
+  background: var(--gold);
+  color: #10131a;
+  border: 1px solid var(--gold);
+  background-image: none;
+}
+
+.hero-buttons .btn-outline {
+  background: transparent;
+  color: #f3f6ff;
+  border: 1px solid var(--gold);
+  background-image: none;
+}
+
+.hero-buttons .btn-gold:hover,
+.hero-buttons .btn-outline:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .card, article, .news-card, .feature-card {
+    border-radius: 14px;
+  }
+}
+</style>
+
+<style id="wartlo-title-final">
+/* عنوان حرفه‌ای مافیا وارتلو */
+.hero h1 .brand-name {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+.hero h1 .brand-mafia {
+  color: #ff294d !important;
+  -webkit-text-fill-color: #ff294d !important;
+  background: none !important;
+  text-shadow: 0 0 16px rgba(255, 41, 77, 0.22);
+}
+
+.hero h1 .brand-wartlo {
+  background: linear-gradient(110deg, #e8fcff, #64ddff, #168bff) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: none;
+  filter: drop-shadow(0 0 8px rgba(22, 139, 255, 0.2));
+}
+
+@media (max-width: 380px) {
+  .hero h1 .brand-name {
+    gap: 5px;
+    font-size: 0.9em;
+  }
+}
+</style>
+
+<style id="wartlo-button-interaction">
+.hero-buttons .btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 12px;
+  font-weight: 800;
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    background-color .22s ease,
+    border-color .22s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* درخشش متحرک هنگام عبور نشانگر */
+.hero-buttons .btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -50%;
+  left: -80%;
+  width: 45%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.4),
+    transparent
+  );
+  transform: skewX(-22deg);
+  transition: left .55s ease;
+  pointer-events: none;
+}
+
+.hero-buttons .btn:hover::before {
+  left: 140%;
+}
+
+/* دکمه اخبار */
+.hero-buttons .btn-gold {
+  box-shadow: 0 5px 18px rgba(212,175,90,.16);
+}
+
+.hero-buttons .btn-gold:hover {
+  transform: translateY(-3px) scale(1.025);
+  box-shadow:
+    0 8px 26px rgba(212,175,90,.35),
+    0 0 0 1px rgba(255,230,160,.2);
+}
+
+/* دکمه درباره بازی */
+.hero-buttons .btn-outline {
+  box-shadow: inset 0 0 0 rgba(80,180,255,0);
+}
+
+.hero-buttons .btn-outline:hover {
+  transform: translateY(-3px) scale(1.025);
+  border-color: #64ddff;
+  background: rgba(30,145,255,.12);
+  box-shadow:
+    0 8px 25px rgba(30,145,255,.2),
+    inset 0 0 18px rgba(30,145,255,.06);
+}
+
+/* واکنش لحظه‌ای به لمس در موبایل */
+.hero-buttons .btn:active {
+  transform: scale(.96);
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+
+/* نمایش واضح هنگام انتخاب با صفحه‌کلید */
+.hero-buttons .btn:focus-visible {
+  outline: 2px solid #64ddff;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-buttons .btn,
+  .hero-buttons .btn::before {
+    transition: none;
+  }
+}
+</style>
+
+<style id="wartlo-hero-title-emergency-fix">
+.hero h1 .brand-name {
+  display: inline-flex !important;
+  flex-wrap: nowrap !important;
+  gap: 8px !important;
+  white-space: nowrap !important;
+  direction: rtl !important;
+}
+
+.hero h1 .brand-name .brand-mafia {
+  display: inline !important;
+  color: #ff294d !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #ff294d !important;
+  text-shadow: 0 0 14px rgba(255,41,77,.4) !important;
+}
+
+.hero h1 .brand-name .brand-wartlo {
+  display: inline !important;
+  color: #64ddff !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-text-fill-color: #64ddff !important;
+  text-shadow: 0 0 14px rgba(22,139,255,.4) !important;
+  filter: none !important;
+}
+
+@media (max-width: 380px) {
+  .hero h1 .brand-name {
+    gap: 5px !important;
+    font-size: .88em !important;
+  }
+}
+</style>
+
+
+<style id="wartlo-header-brand-final">
+header .logo .header-brand-name {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  font-weight: 900;
+}
+
+header .logo .header-brand-title {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  font-size: 19px;
+  line-height: 1.5;
+}
+
+header .logo .header-mafia {
+  color: #ff294d !important;
+  -webkit-text-fill-color: #ff294d !important;
+  background: none !important;
+  text-shadow: 0 0 10px rgba(255,41,77,.25);
+}
+
+header .logo .header-wartlo {
+  color: #64ddff !important;
+  -webkit-text-fill-color: #64ddff !important;
+  background: none !important;
+  text-shadow: 0 0 10px rgba(22,139,255,.25);
+}
+
+header .logo .header-brand-name small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #a9b8ca;
+  direction: ltr;
+}
+
+@media (max-width: 380px) {
+  header .logo .header-brand-title {
+    font-size: 16px;
+    gap: 4px;
+  }
+}
+</style>
+
+<style id="wartlo-premium-navigation">
+/* منوی حرفه‌ای بالای سایت */
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+header nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 15px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  color: #c6d2e5;
+  background: transparent;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  overflow: hidden;
+  isolation: isolate;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    color .25s ease,
+    background .25s ease,
+    border-color .25s ease,
+    transform .2s ease,
+    box-shadow .25s ease;
+}
+
+/* نور متحرک هنگام اشاره یا لمس */
+header nav a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    rgba(25,145,255,.14),
+    rgba(255,41,77,.10)
+  );
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+header nav a:hover::before,
+header nav a:focus-visible::before {
+  opacity: 1;
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  color: #ffffff;
+  border-color: rgba(100,221,255,.35);
+  box-shadow: 0 4px 18px rgba(22,139,255,.12);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* واکنش واقعی هنگام لمس در موبایل */
+header nav a:active {
+  transform: scale(.94);
+  background: rgba(35,145,255,.18);
+  border-color: rgba(100,221,255,.55);
+  box-shadow: inset 0 0 12px rgba(22,139,255,.12);
+}
+
+/* خط نورانی زیر گزینه انتخاب‌شده با صفحه‌کلید */
+header nav a:focus-visible {
+  outline: 2px solid #64ddff;
+  outline-offset: 3px;
+}
+
+/* نمایش بهتر منو در صفحه‌های کوچک */
+@media (max-width: 700px) {
+  header nav {
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  header nav a {
+    padding: 9px 10px;
+    font-size: 12px;
+    border-radius: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header nav a,
+  header nav a::before {
+    transition: none;
+  }
+}
+</style>
