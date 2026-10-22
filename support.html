@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080c18">
+<meta name="description" content="پشتیبانی رسمی مافیا وارتلو؛ ارتباط با تیم پشتیبانی از طریق روبیکا">
+<title>پشتیبانی رسمی | مافیا وارتلو</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #070a12;
+  --panel: rgba(16, 24, 42, .78);
+  --blue: #42baff;
+  --red: #ff435c;
+  --white: #f4f7ff;
+  --muted: #a8b4ca;
+  --border: rgba(118, 166, 220, .20);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--white);
+  background:
+    radial-gradient(ellipse at 12% 12%, rgba(0, 135, 255, .17), transparent 35%),
+    radial-gradient(ellipse at 88% 38%, rgba(255, 35, 70, .12), transparent 32%),
+    radial-gradient(ellipse at 50% 100%, rgba(26, 65, 120, .20), transparent 40%),
+    var(--bg);
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  line-height: 1.9;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .18;
+  background-image:
+    linear-gradient(rgba(100, 160, 220, .07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 160, 220, .07) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(920px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 22px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -.3px;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  border: 1px solid rgba(77, 185, 255, .45);
+  background: linear-gradient(145deg, rgba(46, 160, 255, .18), rgba(255, 50, 80, .12));
+  box-shadow: 0 0 24px rgba(47, 155, 255, .12);
+  font-size: 21px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: #dce9ff;
+  background: rgba(255, 255, 255, .035);
+  font-size: 12px;
+  font-weight: 700;
+  transition: .25s ease;
+}
+
+.back-link:hover {
+  border-color: var(--blue);
+  background: rgba(66, 186, 255, .10);
+  transform: translateY(-2px);
+}
+
+.hero {
+  position: relative;
+  margin-top: 16px;
+  padding: 42px 24px 35px;
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 27px;
+  background: linear-gradient(145deg, rgba(19, 31, 54, .88), rgba(10, 15, 28, .85));
+  box-shadow: 0 22px 75px rgba(0, 0, 0, .28), inset 0 1px rgba(255, 255, 255, .04);
+  animation: rise .75s ease both;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 180px;
+  top: -125px;
+  left: calc(50% - 150px);
+  border-radius: 50%;
+  background: var(--blue);
+  opacity: .17;
+  filter: blur(65px);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 25px;
+  bottom: 25px;
+  width: 3px;
+  border-radius: 5px;
+  background: linear-gradient(transparent, var(--blue), var(--red), transparent);
+  box-shadow: 0 0 16px rgba(66, 186, 255, .35);
+}
+
+.logo-frame {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  margin: 0 auto 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 29px;
+  border: 1px solid rgba(100, 190, 255, .42);
+  background: linear-gradient(145deg, rgba(58, 151, 255, .13), rgba(255, 52, 82, .11));
+  box-shadow: 0 0 35px rgba(48, 156, 255, .13), inset 0 0 25px rgba(255, 255, 255, .025);
+  animation: float 4s ease-in-out infinite;
+}
+
+.logo-frame img {
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 13px;
+  border: 1px solid rgba(66, 186, 255, .25);
+  border-radius: 100px;
+  color: #a7dcff;
+  background: rgba(66, 186, 255, .07);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #58d9a0;
+  box-shadow: 0 0 10px #58d9a0;
+}
+
+h1 {
+  margin: 17px 0 8px;
+  font-size: clamp(25px, 5vw, 39px);
+  line-height: 1.6;
+  font-weight: 900;
+  letter-spacing: -.8px;
+}
+
+.mafia-title {
+  color: #ff435c;
+  background: none;
+  -webkit-text-fill-color: #ff435c;
+}
+.wartlo-title {
+  color: #67d5ff;
+  background: none;
+  -webkit-text-fill-color: #67d5ff;
+}
+h1 span {
+  color: transparent;
+  background: linear-gradient(90deg, #8bd9ff, #ffffff 48%, #ff8798);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.hero-description {
+  max-width: 580px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2.2;
+}
+
+.section-title {
+  margin: 31px 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.section-title::before {
+  content: "";
+  width: 4px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: linear-gradient(var(--blue), var(--red));
+  box-shadow: 0 0 12px rgba(66, 186, 255, .25);
+}
+
+.welcome-card {
+  position: relative;
+  padding: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(66, 186, 255, .23);
+  border-radius: 19px;
+  background: linear-gradient(115deg, rgba(25, 65, 99, .32), rgba(19, 27, 44, .72));
+}
+
+.welcome-card::after {
+  content: "✦";
+  position: absolute;
+  left: 18px;
+  top: 5px;
+  color: rgba(104, 198, 255, .20);
+  font-size: 53px;
+}
+
+.welcome-card h2 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.welcome-card p {
+  margin: 0;
+  color: #b8c7dd;
+  font-size: 13px;
+  line-height: 2.2;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 13px;
+}
+
+.step-card {
+  min-width: 0;
+  padding: 20px 15px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--panel);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  animation: rise .65s ease both;
+}
+
+.step-card:nth-child(2) {
+  animation-delay: .1s;
+}
+
+.step-card:nth-child(3) {
+  animation-delay: .2s;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(66, 186, 255, .55);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, .18);
+}
+
+.step-number {
+  width: 37px;
+  height: 37px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 12px;
+  border: 1px solid rgba(66, 186, 255, .30);
+  border-radius: 12px;
+  color: #a7e1ff;
+  background: rgba(66, 186, 255, .09);
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.step-card h3 {
+  margin: 0 0 5px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.step-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+}
+
+.support-card {
+  position: relative;
+  margin-top: 30px;
+  padding: 26px 22px;
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid rgba(255, 75, 105, .26);
+  border-radius: 23px;
+  background:
+    radial-gradient(ellipse at 90% 0%, rgba(255, 54, 86, .12), transparent 45%),
+    linear-gradient(145deg, rgba(21, 29, 47, .94), rgba(12, 16, 28, .95));
+  box-shadow: 0 18px 55px rgba(0, 0, 0, .22);
+}
+
+.support-card h2 {
+  margin: 0 0 5px;
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.support-card > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.handle-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 310px;
+  margin: 19px auto;
+  padding: 11px 16px;
+  border: 1px dashed rgba(112, 193, 255, .48);
+  border-radius: 14px;
+  background: rgba(66, 186, 255, .065);
+}
+
+.handle-label {
+  color: #aab9cf;
+  font-size: 12px;
+}
+
+.handle {
+  direction: ltr;
+  color: #8bd8ff;
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: .4px;
+}
+
+.support-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 370px;
+  min-height: 56px;
+  margin: 0 auto;
+  padding: 13px 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 15px;
+  color: white;
+  background: linear-gradient(100deg, #167ac5, #2369cf 48%, #b52c51);
+  box-shadow: 0 8px 28px rgba(27, 115, 204, .20), 0 0 20px rgba(255, 57, 91, .09);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.support-button::before {
+  content: "";
+  position: absolute;
+  top: -80%;
+  left: -50%;
+  width: 35%;
+  height: 260%;
+  transform: rotate(25deg);
+  background: rgba(255, 255, 255, .17);
+  transition: left .55s ease;
+}
+
+.support-button:hover::before {
+  left: 125%;
+}
+
+.support-button:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.12);
+  box-shadow: 0 13px 35px rgba(27, 115, 204, .28);
+}
+
+.support-button:active {
+  transform: scale(.985);
+}
+
+.button-icon {
+  font-size: 20px;
+}
+
+.notice {
+  margin-top: 17px;
+  padding: 13px 15px;
+  border: 1px solid rgba(255, 190, 90, .17);
+  border-radius: 13px;
+  color: #d7c6a4;
+  background: rgba(255, 184, 77, .045);
+  font-size: 11px;
+  line-height: 2;
+}
+
+.footer {
+  padding: 27px 0 30px;
+  text-align: center;
+  color: #75849b;
+  font-size: 11px;
+}
+
+.footer strong {
+  color: #aab9cf;
+}
+
+.footer-line {
+  width: 70px;
+  height: 2px;
+  margin: 0 auto 15px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--blue), var(--red));
+  opacity: .7;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@media (max-width: 620px) {
+  .container {
+    width: min(100% - 22px, 500px);
+  }
+
+  .topbar {
+    padding: 15px 0;
+  }
+
+  .brand {
+    font-size: 12px;
+  }
+
+  .brand-mark {
+    width: 37px;
+    height: 37px;
+  }
+
+  .back-link {
+    padding: 8px 11px;
+    font-size: 11px;
+  }
+
+  .hero {
+    margin-top: 8px;
+    padding: 32px 17px 27px;
+    border-radius: 22px;
+  }
+
+  .logo-frame {
+    width: 86px;
+    height: 86px;
+    border-radius: 24px;
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .section-title {
+    margin-top: 25px;
+    font-size: 15px;
+  }
+
+  .welcome-card {
+    padding: 18px;
+  }
+
+  .welcome-card p {
+    font-size: 12px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .step-card {
+    display: grid;
+    grid-template-columns: 39px 1fr;
+    column-gap: 12px;
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .step-number {
+    grid-row: span 2;
+    margin: 2px 0 0;
+  }
+
+  .step-card h3 {
+    align-self: end;
+  }
+
+  .step-card p {
+    align-self: start;
+  }
+
+  .support-card {
+    padding: 23px 16px;
+    border-radius: 19px;
+  }
+
+  .support-card h2 {
+    font-size: 17px;
+  }
+
+  .support-button {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+
+/* ارتقای ظریف گرافیک؛ حفظ رنگ‌ها و ظاهر اصلی دکمه‌ها */
+@media (prefers-reduced-motion: no-preference) {
+  .back-link,
+  .contact-button,
+  button,
+  .step-card,
+  .welcome-card,
+  .contact-card,
+  .notice-card {
+    transition:
+      transform .22s ease,
+      box-shadow .22s ease,
+      filter .22s ease;
+  }
+}
+
+/* واکنش نرم دکمه‌ها هنگام لمس و کلیک */
+.back-link:active,
+.contact-button:active,
+button:active {
+  transform: scale(.97);
+  filter: brightness(.94);
+}
+
+.back-link:focus-visible,
+.contact-button:focus-visible,
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* عمق بیشتر کارت‌ها بدون تغییر رنگ زمینه */
+.step-card,
+.welcome-card,
+.contact-card,
+.notice-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.step-card::before,
+.welcome-card::before,
+.contact-card::before,
+.notice-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.045),
+      transparent 28%,
+      transparent 72%,
+      rgba(255,255,255,.018)
+    );
+  z-index: -1;
+}
+
+.step-card::after,
+.contact-card::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 24px;
+  height: 24px;
+  border-top: 1px solid rgba(255,255,255,.16);
+  border-right: 1px solid rgba(255,255,255,.16);
+  border-radius: 0 8px 0 0;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .step-card:hover,
+  .welcome-card:hover,
+  .contact-card:hover,
+  .notice-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 38px rgba(0,0,0,.20);
+  }
+
+  .back-link:hover,
+  .contact-button:hover,
+  button:hover {
+    filter: brightness(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-link,
+  .contact-button,
+  button,
+  .step-card,
+  .welcome-card,
+  .contact-card,
+  .notice-card {
+    transition: none !important;
+  }
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header class="topbar">
+
+
+    <a class="back-link" href="index.html">
+      <span aria-hidden="true">↩</span>
+      صفحه اصلی
+    </a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="logo-frame">
+        <img src="logo.png" alt="لوگوی مافیا وارتلو"
+             onerror="this.style.display='none';this.parentElement.innerHTML='♜';this.parentElement.style.fontSize='48px';">
+      </div>
+
+      <div class="eyebrow">در کنار بازیکنان وارتلو</div>
+
+      <h1>پشتیبانی رسمی<br><span class="mafia-title">مافیا</span> <span class="wartlo-title">وارتلو</span></h1>
+
+      <p class="hero-description">
+        هر پیام تو برای ما ارزشمنده. برای پرسیدن سؤال، گزارش مشکل
+        یا فرستادن پیشنهادهای خودت، از راه ارتباطی رسمی با ما در تماس باش.
+      </p>
+    </section>
+
+    <section aria-labelledby="welcome-title">
+      <h2 class="section-title" id="welcome-title">خوش اومدی، بازیکن وارتلو!</h2>
+
+      <div class="welcome-card">
+        <h2>صدای تو، قدمی برای بهتر شدن بازی 🖤</h2>
+        <p>
+          مافیا وارتلو با همراهی بازیکنانش پیشرفت می‌کنه.
+          اگر با مشکلی روبه‌رو شدی، سؤالی داری یا ایده‌ای برای بهتر شدن بازی
+          به ذهنت رسیده، خوشحال می‌شیم پیامت رو دریافت کنیم.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="steps-title">
+      <h2 class="section-title" id="steps-title">چطور با پشتیبانی ارتباط بگیری؟</h2>
+
+      <div class="steps">
+        <article class="step-card">
+          <div class="step-number">۰۱</div>
+          <h3>ورود به روبینو</h3>
+          <p>از طریق دکمه زیر وارد صفحه رسمی پشتیبانی شو.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">۰۲</div>
+          <h3>انتخاب «پیام»</h3>
+          <p>در صفحه روبینو، گزینه «پیام» رو پیدا و انتخاب کن.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">۰۳</div>
+          <h3>ارسال درخواست</h3>
+          <p>سؤالت یا مشکلت رو بنویس تا درخواستت بررسی بشه.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="support-card" aria-labelledby="contact-title">
+      <h2 id="contact-title">ارتباط مستقیم با پشتیبانی</h2>
+      <p>از طریق حساب رسمی مافیا وارتلو در روبیکا با ما در تماس باش.</p>
+
+      <div class="handle-box">
+        <span class="handle-label">شناسه رسمی:</span>
+        <span class="handle">@MafiaWartlo</span>
+      </div>
+
+      <a class="support-button"
+         href="https://rubika.ir/MafiaWartlo"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span class="button-icon" aria-hidden="true">✉</span>
+        <span>ارتباط با پشتیبانی در روبیکا</span>
+        <span aria-hidden="true">←</span>
+      </a>
+
+      <div class="notice">
+        <strong>نکته:</strong>
+        پس از ورود به صفحه روبینو، گزینه «پیام» رو انتخاب کن
+        و درخواستت رو برای حساب پشتیبانی ارسال کن.
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-line"></div>
+    <strong>MAFIA WARTLO</strong>
+    <div>ساخته‌شده برای تجربه‌ای بهتر در دنیای مافیا</div>
+    <div>© مافیا وارتلو</div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  if (history.state && history.state.wartloSupportBack) return;
+
+  history.replaceState({ wartloSupportHome: true }, "", location.href);
+  history.pushState({ wartloSupportBack: true }, "", location.href);
+
+  window.addEventListener("popstate", function () {
+    window.location.href = "index.html";
+  });
+})();
+</script>
+</body>
+</html>
